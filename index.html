@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristian Adjektivhistorie uke3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="app"></div>
+    
+    <script>
+        //model
+        var ord1 = '___';
+        var ord2 = '___';
+        var ord3 = '___';
+        var ord4 = '___';
+        var ord5 = '___';
+        
+        //view
+        view();
+        function view() { /*HTML*/ 
+            document.getElementById("app").innerHTML = /*HTML*/`
+            <h1>Adjektivhitorie uke3 Kristian J.</h1>
+            <p>Once upon a time thre was a <b>${ord1}</b> who went to <b>${ord2}</b> there they encountered a <b>${ord3}</b> that <b>${ord4}</b> them <b>${ord5}  </p>
+            <div id="choices">
+                <div id="choices1">
+                    <button class="ord1" onclick=valgtOrd(this)>Man</button>
+                    <button class="ord1" onclick=valgtOrd(this)>woman</button>
+                    <button class="ord1" onclick=valgtOrd(this)>wolf</button>
+                </div>
+                <br>
+                <div id="choices2">
+                    <button class="ord2" onclick=valgtOrd(this)>town</button>
+                    <button class="ord2" onclick=valgtOrd(this)>Mexico</button>
+                    <button class="ord2" onclick=valgtOrd(this)>court</button>
+                </div>
+                <br> 
+                <div id="choices3">
+                    <button class="ord3" onclick=valgtOrd(this)>Fox</button>
+                    <button class="ord3" onclick=valgtOrd(this)>Thief</button>
+                    <button class="ord3" onclick=valgtOrd(this)>Hero</button>
+                </div>
+                <br> 
+                <div id="choices4">
+                    <button class="ord4" onclick=valgtOrd(this)>Killed</button>
+                    <button class="ord4" onclick=valgtOrd(this)>Saved</button>
+                    <button class="ord4" onclick=valgtOrd(this)>Married</button>
+                </div> 
+                <br>
+                <div id="choices5">
+                    <button class="ord5" onclick=valgtOrd(this)>and they lived happily ever after</button>
+                    <button class="ord5" onclick=valgtOrd(this)>the murderer was then hunted</button>
+                    <button class="ord5" onclick=valgtOrd(this)>they divorced soon after</button>
+                </div> 
+            </div>
+            `;
+        }
+
+        //controller
+        function valgtOrd(ord) {
+            let valgtord = ord.innerHTML.toLowerCase();
+            let ordKlasse = ord.className;
+            switch (ordKlasse) {
+                case "ord1":
+                    ord1 = valgtord;
+                    break;
+                case "ord2":
+                    ord2 = valgtord;
+                    break;
+                case "ord3":
+                    ord3 = valgtord;
+                    break;
+                case "ord4": 
+                    ord4 = valgtord;
+                    break;
+                case "ord5": 
+                    ord5 = valgtord + '</b>.';
+            }
+            view();
+        }
+
+    </script>
+</body>    
+</html>
